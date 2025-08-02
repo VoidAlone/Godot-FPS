@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://db75twjeolnd"]
+
+[ext_resource type="Script" uid="uid://cl1bs1ll8kuf2" path="res://Weapons/gun_data.gd" id="1_p574v"]
+[ext_resource type="Script" uid="uid://bjmawqjs3xccg" path="res://Weapons/AttackComponents/full_auto_atkcomp.gd" id="2_d8yto"]
+
+[sub_resource type="PlaceholderMesh" id="PlaceholderMesh_mvtf2"]
+
+[node name="AR1" type="Node3D"]
+script = ExtResource("1_p574v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaceholderMesh_mvtf2")
+
+[node name="full_auto_atkcomp" type="Node" parent="."]
+script = ExtResource("2_d8yto")
+metadata/_custom_type_script = "uid://bjmawqjs3xccg"

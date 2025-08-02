@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbgbdymftw3uh"]
+
+[ext_resource type="Script" uid="uid://7uv3mj5ly8r" path="res://Player/player.gd" id="1_5mj4t"]
+[ext_resource type="PackedScene" uid="uid://db75twjeolnd" path="res://Weapons/Weapons/ar_1.tscn" id="2_eovys"]
+[ext_resource type="Script" uid="uid://bn4f4dl8wuslp" path="res://Player/camera_controller.gd" id="3_vb825"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ywxx0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ywxx0"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_5mj4t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ywxx0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ywxx0")
+
+[node name="AR1" parent="." instance=ExtResource("2_eovys")]
+
+[node name="Head" type="Node3D" parent="." node_paths=PackedStringArray("character", "head")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("3_vb825")
+character = NodePath("..")
+head = NodePath(".")
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
+fov = 90.0

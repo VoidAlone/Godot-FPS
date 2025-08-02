@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgeqcjsdxn316"]
+
+[ext_resource type="Script" uid="uid://bjmawqjs3xccg" path="res://Weapons/AttackComponents/full_auto_atkcomp.gd" id="1_s4aar"]
+
+[node name="full_auto_atkcomp" type="Node"]
+script = ExtResource("1_s4aar")
+metadata/_custom_type_script = "uid://dm3wsg2jwow5i"

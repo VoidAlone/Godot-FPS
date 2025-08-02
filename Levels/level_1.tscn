@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvl2015r8jp3p"]
+
+[ext_resource type="PackedScene" uid="uid://cbgbdymftw3uh" path="res://Player/player.tscn" id="1_n0qsc"]
+[ext_resource type="PackedScene" uid="uid://d1ttgjc046bns" path="res://Levels/wall.tscn" id="2_dilhk"]
+
+[sub_resource type="Environment" id="Environment_ilcil"]
+ambient_light_source = 3
+ambient_light_color = Color(0.85836, 0.997514, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m6uo5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0qsc"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ilcil")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_m6uo5")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_n0qsc")
+debug_color = Color(1, 0, 0, 0.6)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.6191, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_n0qsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19, 0)
+
+[node name="MeshInstance3D2" parent="." instance=ExtResource("2_dilhk")]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+
+[node name="MeshInstance3D3" parent="." instance=ExtResource("2_dilhk")]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+
+[node name="MeshInstance3D4" parent="." instance=ExtResource("2_dilhk")]
+transform = Transform3D(-2.18557e-06, 0, 1, 0, 1, 0, -50, 0, -4.37114e-08, 25, 0, 0)
+
+[node name="MeshInstance3D5" parent="." instance=ExtResource("2_dilhk")]
+transform = Transform3D(-2.18557e-06, 0, 1, 0, 1, 0, -50, 0, -4.37114e-08, -25, 0, 0)
