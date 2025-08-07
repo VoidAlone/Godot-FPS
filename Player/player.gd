@@ -6,10 +6,10 @@ var move_strat : IMove
 func _ready() -> void:
 	if move_strat == null:
 		move_strat = QuakeMove.new(self)
-	if move_strat.owning_player == null:
-		move_strat.owning_player = self
 
 func _physics_process(delta: float) -> void:
-	if move_strat:
-		move_strat.move(delta)
+	velocity = move_strat.move(delta, self.global_transform.basis)
+	custom_move_and_slide()
 		
+func custom_move_and_slide():
+	pass

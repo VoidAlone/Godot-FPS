@@ -1,6 +1,9 @@
 class_name StandardMove extends IMove
 
-func move(delta: float):
+var player_basis : Basis
+
+func move(delta: float, basis):
+	player_basis = basis
 	owning_player.velocity = self.calc_velocity(delta)
 	owning_player.move_and_slide()
 	
@@ -11,7 +14,7 @@ func calc_velocity(delta: float) -> Vector3:
 		Input.get_axis("move_forward", "move_back"))
 
 	if input_dir != Vector3.ZERO:
-		input_dir = owning_player.global_transform.basis * input_dir
+		input_dir = player_basis * input_dir
 		input_dir.y = 0
 		input_dir = input_dir.normalized()
 

@@ -1,10 +1,22 @@
 class_name QuakeMove extends IMove
 
-func move(delta: float):
-	owning_player.velocity = self.calc_velocity(delta)
-	owning_player.move_and_slide()
-	
-func calc_velocity(delta: float) -> Vector3:
+func move(delta, basis) -> Vector3:
+	var velocity : Vector3
+	match self.current_state:
+		MoveState.GROUND:
+			velocity = self.ground_move(delta)
+		MoveState.AIR:
+			pass
+		MoveState.SWIM:
+			pass
+		MoveState.FLY:
+			pass
+		_:
+			pass
+	return velocity
+
+func ground_move(delta: float,) -> Vector3:
+	var velocity
 	var input_dir = Vector3(
 		Input.get_axis("move_left", "move_right"), 
 		0, 
@@ -14,14 +26,6 @@ func calc_velocity(delta: float) -> Vector3:
 		input_dir = owning_player.global_transform.basis * input_dir
 		input_dir.y = 0
 		input_dir = input_dir.normalized()
-
-	var velocity = input_dir * speed
-	velocity.y = owning_player.velocity.y
-
-	if not owning_player.is_on_floor():
-		velocity.y -= gravity * delta
-	else:
-		velocity.y = 0
 
 	return velocity
 
