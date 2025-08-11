@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbgbdymftw3uh"]
 
-[ext_resource type="Script" uid="uid://7uv3mj5ly8r" path="res://Player/player.gd" id="1_5mj4t"]
+[ext_resource type="Script" uid="uid://7uv3mj5ly8r" path="res://Player/Character.gd" id="1_5mj4t"]
 [ext_resource type="PackedScene" uid="uid://db75twjeolnd" path="res://Weapons/Weapons/ar_1.tscn" id="2_eovys"]
 [ext_resource type="Script" uid="uid://bn4f4dl8wuslp" path="res://Player/camera_controller.gd" id="3_vb825"]
 

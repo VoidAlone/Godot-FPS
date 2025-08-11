@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MoveVars" load_steps=2 format=3 uid="uid://wphn63pik8gd"]
+
+[ext_resource type="Script" uid="uid://d0a1j3wdjhwuv" path="res://Player/Movement/Quake/MoveVars.gd" id="1_55n3p"]
+
+[resource]
+script = ExtResource("1_55n3p")
+STOP_SPEED = 100.0
+DUCK_SCALE = 0.25
+SWIM_SCALE = 0.5
+WADE_SCALE = 0.75
+FRICTION = 6.0
+ACCEL = 10.0
+GRAVITY = 9.8
+SPEED = 10.0
+metadata/_custom_type_script = "uid://d0a1j3wdjhwuv"
