@@ -3,13 +3,12 @@ using System;
 
 public partial class IMove : Resource
 {
-	public float SPEED = 14.0;
-	public float GRAVITY = 75.0;
-	Character owning_player;
+	public float SPEED = 14;
+	public float GRAVITY = 75;
+	// Character owning_player;
 	
 	enum MoveState {GROUND, AIR, SWIM, FLY}
 	MoveState current_move_state = MoveState.GROUND;
-	
 }
 
 //func _init(owner = null):

@@ -9,8 +9,10 @@ func _ready() -> void:
 		move_strat = QuakeMove.new(self)
 
 func _physics_process(delta: float) -> void:
-	velocity = move_strat.move(delta)
-	custom_move_and_slide()
+	velocity = move_strat.Move(delta)
+	# print_debug('velocity from Move(): ' + '{' + str(velocity.x) +', ' + str(velocity.y) + ', ' + str(velocity.z) +'}')
+	move_and_slide()
+	# custom_move_and_slide()
 		
 func custom_move_and_slide():
 	pass

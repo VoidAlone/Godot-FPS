@@ -31,7 +31,7 @@ debug_color = Color(1, 0, 0, 0.6)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.6191, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_n0qsc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0166, 0)
 
 [node name="MeshInstance3D2" parent="." instance=ExtResource("2_dilhk")]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
@@ -44,3 +44,6 @@ transform = Transform3D(-2.18557e-06, 0, 1, 0, 1, 0, -50, 0, -4.37114e-08, 25, 0
 
 [node name="MeshInstance3D5" parent="." instance=ExtResource("2_dilhk")]
 transform = Transform3D(-2.18557e-06, 0, 1, 0, 1, 0, -50, 0, -4.37114e-08, -25, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 5, 30)

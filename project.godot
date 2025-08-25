@@ -12,8 +12,12 @@ config_version=5
 
 config/name="ShooterTest"
 run/main_scene="uid://cvl2015r8jp3p"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[debug]
+
+settings/stdout/print_fps=true
 
 [dotnet]
 
@@ -51,3 +55,10 @@ shoot={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(257, 17),"global_position":Vector2(266, 65),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[rendering]
+
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_3d=1
+environment/defaults/default_clear_color=Color(0.350666, 0.375044, 0.348572, 1)
+anti_aliasing/quality/screen_space_aa=1

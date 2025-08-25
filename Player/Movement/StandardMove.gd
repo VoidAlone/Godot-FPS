@@ -2,8 +2,7 @@ class_name StandardMove extends IMove
 
 var player_basis : Basis
 
-func move(delta: float, basis):
-	player_basis = basis
+func Move(delta: float):
 	owning_player.velocity = self.calc_velocity(delta)
 	owning_player.move_and_slide()
 	
@@ -18,11 +17,11 @@ func calc_velocity(delta: float) -> Vector3:
 		input_dir.y = 0
 		input_dir = input_dir.normalized()
 
-	var velocity = input_dir * speed
+	var velocity = input_dir * SPEED
 	velocity.y = owning_player.velocity.y
 
 	if not owning_player.is_on_floor():
-		velocity.y -= gravity * delta
+		velocity.y -= GRAVITY * delta
 	else:
 		velocity.y = 0
 

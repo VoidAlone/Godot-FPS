@@ -6,3 +6,5 @@ class_name gun_data extends Node3D
 @export var reload_speed: int
 @export var rpm: int
 @export var magazine_capacity: int
+
+

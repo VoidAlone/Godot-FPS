@@ -15,6 +15,6 @@ func _ready() -> void:
 	if owning_player == null:
 		push_error("No owning player defined")
 		
-func move(delta: float) -> Vector3:
+func Move(delta: float) -> Vector3:
 	push_error('not implemented')
 	return Vector3.ZERO
